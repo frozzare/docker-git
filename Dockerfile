@@ -1,5 +1,7 @@
 FROM alpine:latest
 
+LABEL maintainer="Fredrik Forsmo <fredrik.forsmo@gmail.com>"
+
 # Install git and openssh
 RUN apk add --no-cache bash git openssh
 
