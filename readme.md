@@ -4,17 +4,11 @@ Simple docker container to solve issue when you have multiple ssh keys with diff
 
 ## Usage
 
-Remember to add your private ssh key and your current directory so you can clone outside of your container.
+Create a alias so you can use git2 everywhere. 
 
 ```
-docker run -v ~/.ssh/id_rsa:/root/.ssh/id_rsa -v $(pwd):/opt frozzare/git git clone git@github.com:frozzare/docker-git.git /opt/docker-git
-```
-
-This can easy be converted to a alias.
-
-```
-alias git2="docker run -v ~/.ssh/id_rsa:/root/.ssh/id_rsa -v $(pwd):/opt frozzare/git git"
-git2 clone git@github.com:frozzare/docker-git.git /opt/docker-git
+alias git2="docker run -v ~/.ssh/id_rsa:/root/.ssh/id_rsa -v $(pwd)/.gitconfig:/root/.gitconfig -v $(pwd):/opt frozzare/git git"
+git2 clone git@github.com:frozzare/docker-git.git
 ```
 
 ## License
